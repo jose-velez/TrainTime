@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Train Time</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	<!-- Firebase Reference -->
+	<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 </head>
+
 <body>
-	<!--Header of the page-->
-	<header class="col-lg-12 jumbotron">
-		<h1>Train Time</h1>
-		<h3>Just pick one</h3>
-	</header>
-	<!--Table containing the Train Schedule-->
-	<div class="panel panel-primary">
-		<div class="panel-heading"><h3><strong>Current Train Schedule</strong></h3></div>
-		<table>
-			<tr class="thead">
-				<th>Train Name</th>
-				<th>Destination</th>
-				<th>Frequency</th>
-				<th>Next Arrival</th>
-				<th>Minutes Away</th>
-			</tr>
-		</table>
-	</div>
-	<!--Entry Data For new Trains-->
-	<div class="panel panel-primary">
-		<div class="panel-heading"><h3><strong>Add Train</strong></h3></div>
-		<div class="panel-body">
-			
+	<div class="container">
+		<!--Header of the page-->
+		<header class="col-lg-12 jumbotron">
+			<h1>Train Time</h1>
+			<h3>Just pick one</h3>
+		</header>
+		<!--Table containing the Train Schedule-->
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3><strong>Current Train Schedule</strong></h3>
+				<h4 id="currentTime"></h4>
+			</div>
+			<table class="table" id="trainTable">
+				<thead>
+					<tr>
+						<th>Train Name</th>
+						<th>Destination</th>
+						<th>Frequency</th>
+						<th>Next Arrival</th>
+						<th>Minutes Away</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+		</div>
+		<!--Entry Data For new Trains-->
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3><strong>Add Train</strong></h3></div>
+			<div class="panel-body">
+				<form>
+					<label for="trainInput">Train Name</label><br>
+					<input type="text" id="trainInput"><br>
+					<label for="destination">Destination</label><br>
+					<input type="text" id="destinationInput"><br>
+					<label for="firstTrain">First Train Time (HH:MM-military time)</label><br>
+					<input type="number" id="firstTrain"><br>
+					<label for="frequency">Frequency(min)</label><br>
+					<input type="number" id="frequency"><br>
+					<input id="addTrain" type="submit" value="Add a New Train">
+				</form>
+
+			</div>
 		</div>
 	</div>
-
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
+
 </html>
