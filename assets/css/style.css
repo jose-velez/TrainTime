@@ -1,9 +1,36 @@
-th, td
-{
-	padding: 8px;
-	text-align: center;
+body{
+	font-family: 'Orbitron', sans-serif;
+	background-color: #7c7c7c;
 }
-table
-{
-	width: 100%;
+
+th, td {
+    padding: 8px;
+    text-align: center;
+		margin: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+label{
+	margin: 10px 0px 5px 0px;
+
+}
+
+.panel-primary>.panel-heading {
+    text-align: center;
+		background-color: #002465;
+}
+
+.jumbotron{
+	text-align: center;
+	font-family: 'Griffy', cursive;
+	color: #002465;
+	background-color: #7c7c7c
+	
+}
+.addNewTrain{
+	padding: 5px;
+	margin-top: 20PX;
 }

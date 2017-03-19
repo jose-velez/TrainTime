@@ -46,7 +46,6 @@ $("#addTrain").on("click", function() {
     };
     console.log(newTrain);
     // Pushing the new train to firebase
-    
     database.ref().push(newTrain);
 
     console.log(newTrain.train);
@@ -85,6 +84,18 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey)
   console.log("arrival time: " + moment(nextTrain).format("hh:mm"));
   nextTrain = moment(nextTrain).format("hh:mm");
 
+  ///////////////////////////////////////////////////////////////
+  ///     Trying to update the minutes away every minute       //
+  //////////////////////////////////////////////////////////////
+  // var newRow = $("<tr>");
+  //  var newData = $("<td>")
   $("#trainTable > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + " min</td><td>" + nextTrain + "</td><td>" + tminutesTillTrain + "</td>")
 
+  setInterval(updateMinutes(tminutesTillTrain), 10000);
+
 });
+
+function updateMinutes(tminutesTillTrain)
+{
+  $(".minutesAway").html(tminutesTillTrain);
+}
